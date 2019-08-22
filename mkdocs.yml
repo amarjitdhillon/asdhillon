@@ -88,6 +88,8 @@ nav:
   - "Linux": 
     - "Setting Java Home": "linux/java_home/index.md"
     - "Setting andoid device": "linux/android_device.md"
+    - "Commands": "linux/commands.md"
+
   - "Maven": 
     - "Downgrading maven": "maven/downgrade_maven/index.md"
   - "MySQL": 
