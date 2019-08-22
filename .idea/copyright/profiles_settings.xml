@@ -1,0 +1,12 @@
+<component name="CopyrightManager">
+  <settings default="Halogen">
+    <LanguageOptions name="JSP">
+      <option name="fileLocation" value="2" />
+      <option name="prefixLines" value="false" />
+    </LanguageOptions>
+    <LanguageOptions name="JSPX">
+      <option name="fileLocation" value="2" />
+      <option name="prefixLines" value="false" />
+    </LanguageOptions>
+  </settings>
+</component>

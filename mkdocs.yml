@@ -92,6 +92,8 @@ nav:
     - "Downgrading maven": "maven/downgrade_maven/index.md"
   - "MySQL": 
     - "Initial Setup": "mysql/mysql_basics.md"
+    - "JDBC Statements": "mysql/JdbcStatements.md"
+
 
 
 
