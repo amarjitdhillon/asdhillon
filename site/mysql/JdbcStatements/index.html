@@ -1,0 +1,653 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A persanal blog of Amarjit Singh Dhillon">
+      
+      
+        <link rel="canonical" href="https://www.asdhillon.com/mysql/JdbcStatements/">
+      
+      
+        <meta name="author" content="Amarjit Singh Dhillon">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>JDBC Statements - Amarjit Dhillon's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../../manifest.webmanifest">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#difference-between-prepared-statement-and-statement-in-java" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://www.asdhillon.com" title="Amarjit Dhillon's Blog" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Amarjit Dhillon's Blog
+            </span>
+            <span class="md-header-nav__topic">
+              JDBC Statements
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.asdhillon.com" title="Amarjit Dhillon's Blog" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Amarjit Dhillon's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../installing_flink/flink/" title="Installing Flink" class="md-nav__link">
+      Installing Flink
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../Resume/" title="Resume" class="md-nav__link">
+      Resume
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../wget/wget/" title="Wget" class="md-nav__link">
+      Wget
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      WSO2
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        WSO2
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wso2/h2/" title="Install H2" class="md-nav__link">
+      Install H2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wso2/jms/" title="Setup JMS" class="md-nav__link">
+      Setup JMS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/java_home/" title="Setting Java Home" class="md-nav__link">
+      Setting Java Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/android_device/" title="Setting andoid device" class="md-nav__link">
+      Setting andoid device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/commands/" title="Commands" class="md-nav__link">
+      Commands
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Maven
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Maven
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maven/downgrade_maven/" title="Downgrading maven" class="md-nav__link">
+      Downgrading maven
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      MySQL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        MySQL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../mysql_basics/" title="Initial Setup" class="md-nav__link">
+      Initial Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        JDBC Statements
+      </label>
+    
+    <a href="./" title="JDBC Statements" class="md-nav__link md-nav__link--active">
+      JDBC Statements
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-which-one-to-use-and-when" title="1. Which one to use and when?" class="md-nav__link">
+    1. Which one to use and when?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-syntax-for-these-statements" title="2. Syntax for these statements?" class="md-nav__link">
+    2. Syntax for these statements?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-which-has-better-performance" title="3. Which has better performance?" class="md-nav__link">
+    3. Which has better performance?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-which-one-is-more-secure" title="4. Which one is more secure?" class="md-nav__link">
+    4. Which one is more secure?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-which-one-to-use-and-when" title="1. Which one to use and when?" class="md-nav__link">
+    1. Which one to use and when?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-syntax-for-these-statements" title="2. Syntax for these statements?" class="md-nav__link">
+    2. Syntax for these statements?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-which-has-better-performance" title="3. Which has better performance?" class="md-nav__link">
+    3. Which has better performance?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-which-one-is-more-secure" title="4. Which one is more secure?" class="md-nav__link">
+    4. Which one is more secure?
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="difference-between-prepared-statement-and-statement-in-java">Difference between Prepared Statement and Statement in Java<a class="headerlink" href="#difference-between-prepared-statement-and-statement-in-java" title="Permanent link">&para;</a></h1>
+<p>JDBC API provides 3 types of statements for wrapping an SQL query and sending for execution to the database.</p>
+<ol>
+<li><strong>Statement</strong>: It is used to execute normal SQL queries such as <code>select count(*) from Courses</code>. You can also use it to execute DDL, DML and DCL SQL statements. </li>
+<li><strong>Prepared Statement</strong>: is specialized to execute parameterized queries such as <code>select * from Courses where courseId=?</code>, you can execute this SQL multiple times by just changing the course id parameters. They are compiled and cached at database end, hence quite fast for repeated execution.</li>
+<li><strong>Callable Statement</strong>: it is used to execute or call stored procedures stored in the database.</li>
+</ol>
+<div class="admonition info">
+<p>Each of the Statement class has a different purpose and you should use them for what they have designed for. It's very important to understand what they are and what is their purpose, along with how to use it correctly.</p>
+</div>
+<p>In this article, we will focus on understanding the difference between <code>Statement</code> and <code>Prepared Statement</code> by asking the below questions.</p>
+<h2 id="1-which-one-to-use-and-when">1. Which one to use and when?<a class="headerlink" href="#1-which-one-to-use-and-when" title="Permanent link">&para;</a></h2>
+<p>Prepared Statement's sole purpose is to execute bind queries. If you need to execute a query multiple times with just different data then use <code>Prepared Statement</code> and use a placeholder, the question mark sign (?) for the variable data.</p>
+<div class="admonition question">
+<p class="admonition-title">Why it is called a prepared statement?</p>
+<p>When you first execute the prepared SQL query, the database will compile it and cache it for future reuse, next time you call the same query but with a different parameter, then the database will return the result almost immediately. <em>Because of this pre-compilation, this class is called Prepared Statement in Java.</em></p>
+</div>
+<p>It's very useful to build search and insert queries e.g. if your application provides an interface to search some data such as course details, let's say by course, name, instructor, price, or topic. You can create <code>Prepared Statement</code> to handle that for better performance.</p>
+<p>On the other hand, the sole purpose of <code>Statement</code> object is to execute a SQL query. You give them any query and it will execute it, but unlike <code>Prepared Statement</code>, it will not provide pre-compilation.</p>
+<h2 id="2-syntax-for-these-statements">2. Syntax for these statements?<a class="headerlink" href="#2-syntax-for-these-statements" title="Permanent link">&para;</a></h2>
+<p>The syntax for <code>Statement</code> is same as SQL query, you can actually copy SQL from your favorite SQL editor and pass it as String to Statement for execution, but for <code>Prepared Statement</code>, you need to include placeholders i.e. questions mark (?) sign in SQL query e.g.</p>
+<p><div class="codehilite"><pre><span></span><span class="k">select</span> <span class="k">count</span><span class="p">(</span><span class="o">*</span><span class="p">)</span> <span class="k">from</span> <span class="n">Books</span><span class="p">;</span>             <span class="o">//</span>  <span class="k">Statement</span> 
+<span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">Books</span> <span class="k">where</span> <span class="n">book_id</span><span class="o">=?</span><span class="p">;</span>    <span class="o">//</span> <span class="n">Prepared</span> <span class="k">Statement</span>
+</pre></div>
+The actual value is set before executing the query at runtime by using the various <code>setXXX()</code> methods e.g. if placeholder refers to a <code>varchar</code> column then you can use <code>setString(value)</code> to set the value. Similarly, if placeholder refers to an integer column then you can use <code>setInteger(value)</code> method.</p>
+<h2 id="3-which-has-better-performance">3. Which has better performance?<a class="headerlink" href="#3-which-has-better-performance" title="Permanent link">&para;</a></h2>
+<p><code>Prepared Statement</code> provides better performance than <code>Statement</code> object because of pre-compilation of SQL query on the database server. This is because when you use Prepared Statement, the query is compiled the first time but after that it is cached at the database server, making subsequent run faster.</p>
+<p>On the other hand, with the Statement object, even if you execute the same query again and again, they are always first compiled and then executed, making them slower compared to <code>Prepared Statement</code> queries.</p>
+<h2 id="4-which-one-is-more-secure">4. Which one is more secure?<a class="headerlink" href="#4-which-one-is-more-secure" title="Permanent link">&para;</a></h2>
+<p>The <code>Prepared Statement</code> also provides safety against SQL injection, but the incorrect use of Statement can cause SQL injection. If you remember, the cause of SQL injection is malicious SQL code which is injected by malicious users. For example, you could have written above query which returns a book after passing Id as below:</p>
+<div class="codehilite"><pre><span></span><span class="n">String</span> <span class="n">id</span> <span class="o">=</span> <span class="n">getFromUser</span><span class="o">();</span>
+<span class="n">String</span> <span class="n">SQL</span> <span class="o">=</span> <span class="s">&quot;select * from Books where book_id=&quot;</span> <span class="o">+</span> <span class="n">id</span><span class="o">;</span>
+</pre></div>
+
+<p>If you pass this SQL to Statement object then it can cause SQL injection if a user sends malicious SQL code in form of id e.g.  <code>1 == 1</code> OR id, which will return every single book from the database. Though books, may not sound a sensitive data it could happen with any sensitive user data as well. <code>Prepared Statement</code> guards against this.</p>
+<p>That's all about the difference between Statement and <code>Prepared Statement</code> in Java. You can use Statement to execute SQL queries but it's not recommended, especially if you can use <code>Prepared Statement</code>, which is more secure and fast approach to get the data from the database. If you have to pass parameters always use PreparedStatment, never create dynamic SQL queries by concatenating String, it's not safe and prone to SQL injection attack.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../mysql_basics/" title="Initial Setup" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Initial Setup
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019  Amarjit Dhillon
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/odd-snail/" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/smartsplash" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/in/webdexter/" class="md-footer-social__link fa fa-linkedin"></a>
+    
+      <a href="https://www.facebook.com/Amar.314/" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://instagram.com/graphcms" class="md-footer-social__link fa fa-instagram"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.267712eb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

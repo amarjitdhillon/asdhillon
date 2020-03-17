@@ -1,0 +1,863 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A persanal blog of Amarjit Singh Dhillon">
+      
+      
+        <link rel="canonical" href="https://www.asdhillon.com/wso2/jms/">
+      
+      
+        <meta name="author" content="Amarjit Singh Dhillon">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>Setup JMS - Amarjit Dhillon's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../../manifest.webmanifest">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#setting-up-jms-queue-in-wso2-iot-server" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://www.asdhillon.com" title="Amarjit Dhillon's Blog" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Amarjit Dhillon's Blog
+            </span>
+            <span class="md-header-nav__topic">
+              Setup JMS
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.asdhillon.com" title="Amarjit Dhillon's Blog" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Amarjit Dhillon's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../installing_flink/flink/" title="Installing Flink" class="md-nav__link">
+      Installing Flink
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../Resume/" title="Resume" class="md-nav__link">
+      Resume
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../wget/wget/" title="Wget" class="md-nav__link">
+      Wget
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      WSO2
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        WSO2
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../h2/" title="Install H2" class="md-nav__link">
+      Install H2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Setup JMS
+      </label>
+    
+    <a href="./" title="Setup JMS" class="md-nav__link md-nav__link--active">
+      Setup JMS
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#knowing-the-configuration-file-paths" title="Knowing the configuration file paths" class="md-nav__link">
+    Knowing the configuration file paths
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-configuration-for-jms" title="Setting up the configuration for JMS" class="md-nav__link">
+    Setting up the configuration for JMS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-transport-receiver" title="Enable Transport Receiver" class="md-nav__link">
+    Enable Transport Receiver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-transport-sender" title="Enable Transport Sender" class="md-nav__link">
+    Enable Transport Sender
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-changes-in-axis2_clientxml-file" title="Making Changes in axis2_client.xml file" class="md-nav__link">
+    Making Changes in axis2_client.xml file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-receiver-and-sender-for-broker-core-and-analytics" title="Enable Receiver and Sender for Broker, Core and Analytics" class="md-nav__link">
+    Enable Receiver and Sender for Broker, Core and Analytics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-the-required-dependencies" title="Download the required dependencies." class="md-nav__link">
+    Download the required dependencies.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-and-start-activemq" title="Install and start ActiveMQ" class="md-nav__link">
+    Install and start ActiveMQ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-the-iot-server-ie-broker-core-and-analytics" title="Start the IoT Server i.e. broker, core and analytics." class="md-nav__link">
+    Start the IoT Server i.e. broker, core and analytics.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-pipeline" title="Make pipeline" class="md-nav__link">
+    Make pipeline
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/java_home/" title="Setting Java Home" class="md-nav__link">
+      Setting Java Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/android_device/" title="Setting andoid device" class="md-nav__link">
+      Setting andoid device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../linux/commands/" title="Commands" class="md-nav__link">
+      Commands
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Maven
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Maven
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maven/downgrade_maven/" title="Downgrading maven" class="md-nav__link">
+      Downgrading maven
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      MySQL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        MySQL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../mysql/mysql_basics/" title="Initial Setup" class="md-nav__link">
+      Initial Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../mysql/JdbcStatements/" title="JDBC Statements" class="md-nav__link">
+      JDBC Statements
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#knowing-the-configuration-file-paths" title="Knowing the configuration file paths" class="md-nav__link">
+    Knowing the configuration file paths
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-the-configuration-for-jms" title="Setting up the configuration for JMS" class="md-nav__link">
+    Setting up the configuration for JMS
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enable-transport-receiver" title="Enable Transport Receiver" class="md-nav__link">
+    Enable Transport Receiver
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-transport-sender" title="Enable Transport Sender" class="md-nav__link">
+    Enable Transport Sender
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#making-changes-in-axis2_clientxml-file" title="Making Changes in axis2_client.xml file" class="md-nav__link">
+    Making Changes in axis2_client.xml file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enable-receiver-and-sender-for-broker-core-and-analytics" title="Enable Receiver and Sender for Broker, Core and Analytics" class="md-nav__link">
+    Enable Receiver and Sender for Broker, Core and Analytics
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#download-the-required-dependencies" title="Download the required dependencies." class="md-nav__link">
+    Download the required dependencies.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#install-and-start-activemq" title="Install and start ActiveMQ" class="md-nav__link">
+    Install and start ActiveMQ
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#start-the-iot-server-ie-broker-core-and-analytics" title="Start the IoT Server i.e. broker, core and analytics." class="md-nav__link">
+    Start the IoT Server i.e. broker, core and analytics.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#make-pipeline" title="Make pipeline" class="md-nav__link">
+    Make pipeline
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="setting-up-jms-queue-in-wso2-iot-server">Setting up JMS Queue in WSO2 IoT Server<a class="headerlink" href="#setting-up-jms-queue-in-wso2-iot-server" title="Permanent link">&para;</a></h1>
+<p>I was struggling for few days to get JMS queue up-and-running in <code>WSO2 IoT Server</code>. In my experience, setting the queue is easy in programming, but when it comes to complicated systems, sometime small mistakes can consume lot of time. So, without any further ado, lets get going. Please make sure the <code>WSO2 IoT server</code> is in off state. I will let you know when to turn it on.</p>
+<h2 id="knowing-the-configuration-file-paths">Knowing the configuration file paths<a class="headerlink" href="#knowing-the-configuration-file-paths" title="Permanent link">&para;</a></h2>
+<p>The WSO2 IoT server consists of 3 tiers: <code>Broker</code>, <code>Core</code> and <code>Analytics</code> as shown below</p>
+<p><center><img src="images/1.png" width="70%"></center></p>
+<p>Now, for using the JMS there are 3 options in WSO2 IoT server, which are</p>
+<ol>
+<li>Using Apache ActiveMQ</li>
+<li>Using Apache Qpid</li>
+<li>Using WSO2 Message Broker (MB)</li>
+</ol>
+<p>Out of these, the first option worked for me. The important thing to understand is that, we need to enable the ActiveMQ configurations for all three tiers i.e. Broker, Core and Analytics. The most confusing part is the file structure for configurations, as WSO2 has so many products that even most of paths mentioned in documentation got me confused. So, I would advice you to write the paths down or mark the folders using color coding. Path for IoT Core is shown below <center><img alt="" src="images/2.png" /></center></p>
+<p>Mark both <code>.xml</code> files which are selected in fugure. Next, the path for IoT Analytics as shown below <center><img alt="" src="images/3.png" /></center></p>
+<p>The path of <code>IoT broker</code> is in <code>wso2/broker/conf/axis2</code> similar to IoT analytics.</p>
+<h2 id="setting-up-the-configuration-for-jms">Setting up the configuration for JMS<a class="headerlink" href="#setting-up-the-configuration-for-jms" title="Permanent link">&para;</a></h2>
+<p>Once you know all the paths, lets make the required changes in <code>axis2.xml</code> file as shown below</p>
+<h3 id="enable-transport-receiver">Enable Transport Receiver<a class="headerlink" href="#enable-transport-receiver" title="Permanent link">&para;</a></h3>
+<p>Please note that JMS queue has 2 components: receiver and sender. First we will add the receiver part. If you open the <code>axis.xml</code> file and search for <code>jms</code> you will find the three blocks of code related to receiver part. Please uncomment the code related to ApacheMQ as shown below.</p>
+<p><div class="codehilite"><pre><span></span><span class="nt">&lt;transportReceiver</span> <span class="na">name=</span><span class="s">&quot;jms&quot;</span> <span class="na">class=</span><span class="s">&quot;org.apache.axis2.transport.jms.JMSListener&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;myTopicConnectionFactory&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;java.naming.factory.initial&quot;</span><span class="nt">&gt;</span>org.apache.activemq.jndi.ActiveMQInitialContextFactory<span class="nt">&lt;/parameter&gt;</span>
+         <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;java.naming.provider.url&quot;</span> <span class="na">locked=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>failover:tcp://localhost:61616<span class="nt">&lt;/parameter&gt;</span>
+            <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;transport.jms.ConnectionFactoryJNDIName&quot;</span> <span class="na">locked=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>TopicConnectionFactory<span class="nt">&lt;/parameter&gt;</span>
+            <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;transport.jms.ConnectionFactoryType&quot;</span> <span class="na">locked=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>topic<span class="nt">&lt;/parameter&gt;</span>
+             <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;userName&quot;</span> <span class="na">value=</span><span class="s">&quot;admin&quot;</span><span class="nt">/&gt;</span>
+             <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;password&quot;</span> <span class="na">value=</span><span class="s">&quot;admin&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/parameter&gt;</span>
+<span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;myQueueConnectionFactory&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;java.naming.factory.initial&quot;</span><span class="nt">&gt;</span>org.apache.activemq.jndi.ActiveMQInitialContextFactory<span class="nt">&lt;/parameter&gt;</span>
+         <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;java.naming.provider.url&quot;</span> <span class="na">locked=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>failover:tcp://localhost:61616<span class="nt">&lt;/parameter&gt;</span>
+            <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;transport.jms.ConnectionFactoryJNDIName&quot;</span> <span class="na">locked=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>QueueConnectionFactory<span class="nt">&lt;/parameter&gt;</span>
+            <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;transport.jms.ConnectionFactoryType&quot;</span> <span class="na">locked=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>topic<span class="nt">&lt;/parameter&gt;</span>
+             <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;userName&quot;</span> <span class="na">value=</span><span class="s">&quot;admin&quot;</span><span class="nt">/&gt;</span>
+             <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;password&quot;</span> <span class="na">value=</span><span class="s">&quot;admin&quot;</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;/parameter&gt;</span>
+<span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;default&quot;</span><span class="nt">&gt;</span>
+         <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;java.naming.factory.initial&quot;</span><span class="nt">&gt;</span>org.apache.activemq.jndi.ActiveMQInitialContextFactory<span class="nt">&lt;/parameter&gt;</span>
+         <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;java.naming.provider.url&quot;</span> <span class="na">locked=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>failover:tcp://localhost:61616<span class="nt">&lt;/parameter&gt;</span>
+            <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;transport.jms.ConnectionFactoryJNDIName&quot;</span> <span class="na">locked=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>TopicConnectionFactory<span class="nt">&lt;/parameter&gt;</span>
+            <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">&quot;transport.jms.ConnectionFactoryType&quot;</span> <span class="na">locked=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>topic<span class="nt">&lt;/parameter&gt;</span>
+             <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;userName&quot;</span> <span class="na">value=</span><span class="s">&quot;admin&quot;</span><span class="nt">/&gt;</span>
+             <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;password&quot;</span> <span class="na">value=</span><span class="s">&quot;admin&quot;</span><span class="nt">/&gt;</span>
+
+        <span class="nt">&lt;/parameter&gt;</span>
+<span class="nt">&lt;/transportReceiver&gt;</span>
+</pre></div>
+As you have noticed, I have made some additional changes in given code, one of which is to add failover in front of <code>tcp://localhost:61616</code> and other is to add both <code>username</code> and <code>password</code>. The failover helps to reestablish the connection when connection breaks which often happen in real world scenarios.</p>
+<h3 id="enable-transport-sender">Enable Transport Sender<a class="headerlink" href="#enable-transport-sender" title="Permanent link">&para;</a></h3>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;transportSender</span> <span class="na">name=</span><span class="s">&quot;jms&quot;</span> <span class="na">class=</span><span class="s">&quot;org.apache.axis2.transport.jms.JMSSender&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+
+<p>Un-comment the above code which is also available in file. Please make sure that there is no error when you un-comment the code. If you think there is some issue, please go ahead and copy paste the below code.</p>
+<h3 id="making-changes-in-axis2_clientxml-file">Making Changes in axis2_client.xml file<a class="headerlink" href="#making-changes-in-axis2_clientxml-file" title="Permanent link">&para;</a></h3>
+<p>Just enable the JMS sender by un-commenting the given sender code as shown below. There are no settings for JMS receiver in this file.</p>
+<div class="codehilite"><pre><span></span><span class="nt">&lt;transportSender</span> <span class="na">name=</span><span class="s">&quot;jms&quot;</span>
+    <span class="na">class=</span><span class="s">&quot;org.apache.axis2.transport.jms.JMSSender&quot;</span><span class="nt">/&gt;</span>
+</pre></div>
+
+<h3 id="enable-receiver-and-sender-for-broker-core-and-analytics">Enable Receiver and Sender for Broker, Core and Analytics<a class="headerlink" href="#enable-receiver-and-sender-for-broker-core-and-analytics" title="Permanent link">&para;</a></h3>
+<p>Yes, you have to enable aforementioned settings for both <code>axis2.xml</code> and <code>axis2_client.xml</code> for all three tiers except the exeption mentioned below. Take some time to make sure that there is no mistake while un-commenting the code.</p>
+<div class="admonition error">
+<p class="admonition-title">Exception</p>
+<p>Please dot not enable Transport Sender in IoT_HOME/conf/axis2.xml and IoT_HOME/conf/axis2_client.xml. However, enable Transport sender for all the tiers. A summarized view is given in below table.
+<center><img alt="" src="images/4.png" /></center></p>
+</div>
+<h2 id="download-the-required-dependencies">Download the required dependencies.<a class="headerlink" href="#download-the-required-dependencies" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Caveat</p>
+<p>The ActiveMQ libraries need to be available in various classpath folder of IoT server. You need to copy the jars from the lib folder of the ActiveMQ as shown below.
+<center><img alt="" src="images/5.png" /></center></p>
+</div>
+<p>In case you use the dependency manager such as brew or apt-get to install ActiveMQ, then please find the right version of the ActiveMQ and download the binary version to get jars or go to installation folder. As I used ActiveMQ version 5.5.1 , thus these are the required jars.</p>
+<p>Download these jar files form maven central</p>
+<ol>
+<li><code>activemq-core-5.5.1.jar</code></li>
+<li><code>axis2-transport-all-1.0.0.jar</code></li>
+<li><code>geronimo-j2ee-management_1.0_spec-1.0.1.jar</code></li>
+<li><code>geronimo-jms_1.1_spec-1.1.1.jar</code></li>
+</ol>
+<p>Place them in following 3 locations.</p>
+<ol>
+<li><code>wso2_home/lib</code></li>
+<li><code>wso2_home/wso2/lib</code></li>
+<li><code>wso2_home/wso2/components/lib</code></li>
+</ol>
+<p>Here, the <code>wso2_home</code> is the main installation directory for IoT server. Congrats, we are halfway thorough. Now is time to do some installation</p>
+<h2 id="install-and-start-activemq">Install and start ActiveMQ<a class="headerlink" href="#install-and-start-activemq" title="Permanent link">&para;</a></h2>
+<p>If you are mac user, then type <code>brew install activemq</code> to download ActiveMQ. Further, start the ActiveMQ using <code>activemq start</code> . Now, check status using <code>activemq status</code>. Please use your favorite package manager such as <code>apt-get</code> or <code>choco</code> to download the ActiveMQ, if you are using Linux or Windows respectively.</p>
+<div class="admonition warning">
+<p class="admonition-title">Caveat</p>
+<p>If you run activemq start multiple times, it will kick off multiple JVMs to run the broker. However since you did not specify any unique broker configuration, each instance will use the same default broker configuration from <code>conf/activemq.xml</code>. And that typically means each broker instance will compete for the lock on the default <code>KahaDB</code> store. Only one instance will get the lock on that store and fully start up (the master broker), the other instances will continue to compete for the lock (slave brokers).</p>
+</div>
+<h2 id="start-the-iot-server-ie-broker-core-and-analytics">Start the IoT Server i.e. broker, core and analytics.<a class="headerlink" href="#start-the-iot-server-ie-broker-core-and-analytics" title="Permanent link">&para;</a></h2>
+<p>While the products are starting, run a find search in terminal for jms keyword. This way you will know if there is some issue related to JMS. Message broker should say that jms sender started as shown below <center><img alt="" src="images/6.png" /></center></p>
+<h2 id="make-pipeline">Make pipeline<a class="headerlink" href="#make-pipeline" title="Permanent link">&para;</a></h2>
+<p>First make the basic pipeline so that you have the streaming data arriving at IoT server to a particular stream say <code>stream A</code>. Now we will add the <code>stream A</code> to JMS queue publisher. Then we need the JMS receiver to get the data from JMS publisher and further sends it to a logger. Lets understand it by below figure.</p>
+<p><center><img src="images/7.png" width="90%"></center></p>
+<p>As shows in the above figure the JMS publisher receives the <code>stream A</code> and en-queues the tuples/events in <code>queue1</code>. Further the JMS Subscriber subscribes to queue1 and send it to <code>Stream C</code> . Further <code>Stream C</code> is published to Logger publisher which shows the logs in Analytics terminal console .</p>
+<p>Setting for JMS publisher is given below</p>
+<div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;eventPublisher</span> <span class="na">name=</span><span class="s">&quot;jms_pub&quot;</span> <span class="na">processing=</span><span class="s">&quot;enable&quot;</span> <span class="na">statistics=</span><span class="s">&quot;enable&quot;</span>
+  <span class="na">trace=</span><span class="s">&quot;enable&quot;</span> <span class="na">xmlns=</span><span class="s">&quot;http://wso2.org/carbon/eventpublisher&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;from</span> <span class="na">streamName=</span><span class="s">&quot;stream1_scep_timestamped&quot;</span> <span class="na">version=</span><span class="s">&quot;1.0.0&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;mapping</span> <span class="na">customMapping=</span><span class="s">&quot;disable&quot;</span> <span class="na">type=</span><span class="s">&quot;json&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;to</span> <span class="na">eventAdapterType=</span><span class="s">&quot;jms&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;transport.jms.DestinationType&quot;</span><span class="nt">&gt;</span>queue<span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;transport.jms.Destination&quot;</span><span class="nt">&gt;</span>queue1<span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;transport.jms.ConcurrentPublishers&quot;</span><span class="nt">&gt;</span>allow<span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;java.naming.factory.initial&quot;</span><span class="nt">&gt;</span>org.apache.activemq.jndi.ActiveMQInitialContextFactory<span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;java.naming.provider.url&quot;</span><span class="nt">&gt;</span>tcp://localhost:61616<span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;transport.jms.ConnectionFactoryJNDIName&quot;</span><span class="nt">&gt;</span>QueueConnectionFactory<span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;transport.jms.UserName&quot;</span><span class="nt">&gt;</span>admin<span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">encrypted=</span><span class="s">&quot;true&quot;</span> <span class="na">name=</span><span class="s">&quot;transport.jms.Password&quot;</span><span class="nt">&gt;</span>aa47+5/q7d9AvOHUyYAJDXrx0Q6GQmgzIKS/hOkzp6huHrxslJJk6Oqmv2mrW159DOTfJ7Rw2nBbfGWjGiMckTFAO9p9YVF3kDDHhiyirWEJPSESSSJeBB782qnwoXEDSAjgiiUYWSRuYIfxdibXUUZr3JPSmjaxvy+EVMjjWgouMrid51UQTW50wl3C0fX03/nak4P9+GWx14T1JGAb07fKQlgK/AwYtJ8esNyiV1j0Z2jgGM9OLpqgZ9gqjsA95htzdqy2DgC/U74qfhkUKISAXUWZdGS+rCEYBFaVzAj0aPKtXmRWTrC6OTDSTVLQCKZPfcHqnU652PUQZqqKCA==<span class="nt">&lt;/property&gt;</span>
+  <span class="nt">&lt;/to&gt;</span>
+<span class="nt">&lt;/eventPublisher&gt;</span>
+</pre></div>
+
+<p>The username and password are <code>admin</code> and <code>admin</code>. Only the setting you need form here are the configuration setting like url etc. Make sure to use a unique queue name like I used <code>queue1</code>. Take a note of it as we need to subscribe to it in JMS receiver. Also, one more important thing, there are 2 options in JMS i.e. <code>queue</code> or <code>topic</code>. Make sure you use the same in JMS publisher and JMS Receiver. Also as I am using the queue, hence I used <code>QueueConnectionFactory</code>. The code for JMS receiver is also similar as shown below</p>
+<p><div class="codehilite"><pre><span></span><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;eventReceiver</span> <span class="na">name=</span><span class="s">&quot;jms_sub&quot;</span> <span class="na">statistics=</span><span class="s">&quot;disable&quot;</span> <span class="na">trace=</span><span class="s">&quot;disable&quot;</span> <span class="na">xmlns=</span><span class="s">&quot;http://wso2.org/carbon/eventreceiver&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;from</span> <span class="na">eventAdapterType=</span><span class="s">&quot;jms&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;transport.jms.DestinationType&quot;</span><span class="nt">&gt;</span>queue<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;transport.jms.Destination&quot;</span><span class="nt">&gt;</span>queue1<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;java.naming.factory.initial&quot;</span><span class="nt">&gt;</span>org.apache.activemq.jndi.ActiveMQInitialContextFactory<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;java.naming.provider.url&quot;</span><span class="nt">&gt;</span>tcp://localhost:61616<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;transport.jms.SubscriptionDurable&quot;</span><span class="nt">&gt;</span>false<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;transport.jms.ConnectionFactoryJNDIName&quot;</span><span class="nt">&gt;</span>QueueConnectionFactory<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">&quot;transport.jms.UserName&quot;</span><span class="nt">&gt;</span>admin<span class="nt">&lt;/property&gt;</span>
+        <span class="nt">&lt;property</span> <span class="na">encrypted=</span><span class="s">&quot;true&quot;</span> <span class="na">name=</span><span class="s">&quot;transport.jms.Password&quot;</span><span class="nt">&gt;</span>aa47+5/q7d9AvOHUyYAJDXrx0Q6GQmgzIKS/hOkzp6huHrxslJJk6Oqmv2mrW159DOTfJ7Rw2nBbfGWjGiMckTFAO9p9YVF3kDDHhiyirWEJPSESSSJeBB782qnwoXEDSAjgiiUYWSRuYIfxdibXUUZr3JPSmjaxvy+EVMjjWgouMrid51UQTW50wl3C0fX03/nak4P9+GWx14T1JGAb07fKQlgK/AwYtJ8esNyiV1j0Z2jgGM9OLpqgZ9gqjsA95htzdqy2DgC/U74qfhkUKISAXUWZdGS+rCEYBFaVzAj0aPKtXmRWTrC6OTDSTVLQCKZPfcHqnU652PUQZqqKCA==<span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;/from&gt;</span>
+    <span class="nt">&lt;mapping</span> <span class="na">customMapping=</span><span class="s">&quot;disable&quot;</span> <span class="na">type=</span><span class="s">&quot;json&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;to</span> <span class="na">streamName=</span><span class="s">&quot;stream1_scep_timestamped&quot;</span> <span class="na">version=</span><span class="s">&quot;2.0.0&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/eventReceiver&gt;</span>
+</pre></div>
+Now add the logger and send some events to <code>stream A</code>. If all went right, you should see the output at analytics tier console.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../h2/" title="Install H2" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Install H2
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../linux/java_home/" title="Setting Java Home" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Setting Java Home
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019  Amarjit Dhillon
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/odd-snail/" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/smartsplash" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/in/webdexter/" class="md-footer-social__link fa fa-linkedin"></a>
+    
+      <a href="https://www.facebook.com/Amar.314/" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://instagram.com/graphcms" class="md-footer-social__link fa fa-instagram"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.267712eb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>

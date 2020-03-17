@@ -1,0 +1,1550 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="A persanal blog of Amarjit Singh Dhillon">
+      
+      
+        <link rel="canonical" href="https://www.asdhillon.com/linux/commands/">
+      
+      
+        <meta name="author" content="Amarjit Singh Dhillon">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.1.2">
+    
+    
+      
+        <title>Commands - Amarjit Dhillon's Blog</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.3020aac5.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.224b79ff.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#2196f3">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.01ccdecf.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+      <link rel="manifest" href="../../manifest.webmanifest">
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue" data-md-color-accent="red">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#1-alias" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://www.asdhillon.com" title="Amarjit Dhillon's Blog" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Amarjit Dhillon's Blog
+            </span>
+            <span class="md-header-nav__topic">
+              Commands
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://www.asdhillon.com" title="Amarjit Dhillon's Blog" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Amarjit Dhillon's Blog
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../installing_flink/flink/" title="Installing Flink" class="md-nav__link">
+      Installing Flink
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../Resume/" title="Resume" class="md-nav__link">
+      Resume
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../wget/wget/" title="Wget" class="md-nav__link">
+      Wget
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      WSO2
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        WSO2
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wso2/h2/" title="Install H2" class="md-nav__link">
+      Install H2
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../wso2/jms/" title="Setup JMS" class="md-nav__link">
+      Setup JMS
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" checked>
+    
+    <label class="md-nav__link" for="nav-5">
+      Linux
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../java_home/" title="Setting Java Home" class="md-nav__link">
+      Setting Java Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../android_device/" title="Setting andoid device" class="md-nav__link">
+      Setting andoid device
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Commands
+      </label>
+    
+    <a href="./" title="Commands" class="md-nav__link md-nav__link--active">
+      Commands
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-alias" title="1. alias" class="md-nav__link">
+    1. alias
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cat" title="2. cat" class="md-nav__link">
+    2. cat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cd" title="3. cd" class="md-nav__link">
+    3. cd
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-chmod" title="4. chmod" class="md-nav__link">
+    4. chmod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-chown" title="5. chown" class="md-nav__link">
+    5. chown
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-curl" title="6. curl" class="md-nav__link">
+    6. curl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-df" title="7. df" class="md-nav__link">
+    7. df
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-diff" title="8. diff" class="md-nav__link">
+    8. diff
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-echo" title="9. echo" class="md-nav__link">
+    9. echo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-exit" title="10. exit" class="md-nav__link">
+    10. exit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-find" title="11. find" class="md-nav__link">
+    11. find
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-finger" title="12. finger" class="md-nav__link">
+    12. finger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-free" title="13. free" class="md-nav__link">
+    13. free
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-grep" title="14. grep" class="md-nav__link">
+    14. grep
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-groups" title="15. groups" class="md-nav__link">
+    15. groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-gzip" title="16. gzip" class="md-nav__link">
+    16. gzip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-head" title="17. head" class="md-nav__link">
+    17. head
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-history" title="18. history" class="md-nav__link">
+    18. history
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-kill" title="19. kill" class="md-nav__link">
+    19. kill
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-less" title="20. less" class="md-nav__link">
+    20. less
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-ls" title="21. ls" class="md-nav__link">
+    21. ls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-man" title="22. man" class="md-nav__link">
+    22. man
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-mkdir" title="23. mkdir" class="md-nav__link">
+    23. mkdir
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-mv" title="24. mv" class="md-nav__link">
+    24. mv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-passwd" title="25. passwd" class="md-nav__link">
+    25. passwd
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-ping" title="26. ping" class="md-nav__link">
+    26. ping
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-ps" title="27. ps" class="md-nav__link">
+    27. ps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28-pwd" title="28. pwd" class="md-nav__link">
+    28. pwd
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-shutdown" title="29. shutdown" class="md-nav__link">
+    29. shutdown
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-ssh" title="30. SSH" class="md-nav__link">
+    30. SSH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-sudo" title="31. sudo" class="md-nav__link">
+    31. sudo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-tail" title="32. tail" class="md-nav__link">
+    32. tail
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-tar" title="33. tar" class="md-nav__link">
+    33. tar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-top" title="34. top" class="md-nav__link">
+    34. top
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-uname" title="35. uname" class="md-nav__link">
+    35. uname
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-w" title="36. w" class="md-nav__link">
+    36. w
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-whoami" title="37. whoami" class="md-nav__link">
+    37. whoami
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Maven
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Maven
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maven/downgrade_maven/" title="Downgrading maven" class="md-nav__link">
+      Downgrading maven
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      MySQL
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        MySQL
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../mysql/mysql_basics/" title="Initial Setup" class="md-nav__link">
+      Initial Setup
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../mysql/JdbcStatements/" title="JDBC Statements" class="md-nav__link">
+      JDBC Statements
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-alias" title="1. alias" class="md-nav__link">
+    1. alias
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-cat" title="2. cat" class="md-nav__link">
+    2. cat
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-cd" title="3. cd" class="md-nav__link">
+    3. cd
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-chmod" title="4. chmod" class="md-nav__link">
+    4. chmod
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-chown" title="5. chown" class="md-nav__link">
+    5. chown
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-curl" title="6. curl" class="md-nav__link">
+    6. curl
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-df" title="7. df" class="md-nav__link">
+    7. df
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-diff" title="8. diff" class="md-nav__link">
+    8. diff
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-echo" title="9. echo" class="md-nav__link">
+    9. echo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-exit" title="10. exit" class="md-nav__link">
+    10. exit
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-find" title="11. find" class="md-nav__link">
+    11. find
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-finger" title="12. finger" class="md-nav__link">
+    12. finger
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-free" title="13. free" class="md-nav__link">
+    13. free
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-grep" title="14. grep" class="md-nav__link">
+    14. grep
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-groups" title="15. groups" class="md-nav__link">
+    15. groups
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-gzip" title="16. gzip" class="md-nav__link">
+    16. gzip
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17-head" title="17. head" class="md-nav__link">
+    17. head
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-history" title="18. history" class="md-nav__link">
+    18. history
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#19-kill" title="19. kill" class="md-nav__link">
+    19. kill
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-less" title="20. less" class="md-nav__link">
+    20. less
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-ls" title="21. ls" class="md-nav__link">
+    21. ls
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-man" title="22. man" class="md-nav__link">
+    22. man
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-mkdir" title="23. mkdir" class="md-nav__link">
+    23. mkdir
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-mv" title="24. mv" class="md-nav__link">
+    24. mv
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-passwd" title="25. passwd" class="md-nav__link">
+    25. passwd
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-ping" title="26. ping" class="md-nav__link">
+    26. ping
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-ps" title="27. ps" class="md-nav__link">
+    27. ps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#28-pwd" title="28. pwd" class="md-nav__link">
+    28. pwd
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#29-shutdown" title="29. shutdown" class="md-nav__link">
+    29. shutdown
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-ssh" title="30. SSH" class="md-nav__link">
+    30. SSH
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-sudo" title="31. sudo" class="md-nav__link">
+    31. sudo
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-tail" title="32. tail" class="md-nav__link">
+    32. tail
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-tar" title="33. tar" class="md-nav__link">
+    33. tar
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34-top" title="34. top" class="md-nav__link">
+    34. top
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35-uname" title="35. uname" class="md-nav__link">
+    35. uname
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#36-w" title="36. w" class="md-nav__link">
+    36. w
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#37-whoami" title="37. whoami" class="md-nav__link">
+    37. whoami
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Commands</h1>
+                
+                <p>Linux includes a large number of commands, but I have chosen 37 of the most important ones to present here. Learn these commands, and you’ll be much more at home at the Linux command prompt.</p>
+<p>The below list is presented in alphabetical order. A command’s position in the list is not representative of its usefulness or simplicity. </p>
+<div class="admonition info">
+<p class="admonition-title">Info</p>
+<p>For the final word on a command’s usage, refer to its man pages. The man command is in our list, of course—it’s short for “manual.”</p>
+</div>
+<h2 id="1-alias">1. alias<a class="headerlink" href="#1-alias" title="Permanent link">&para;</a></h2>
+<p>The alias command lets you give your own name to a command or sequence of commands. You can then type your short name, and the shell will execute the command or sequence of commands for you.
+<div class="codehilite"><pre><span></span><span class="nb">alias</span> <span class="nv">cls</span><span class="o">=</span>clear
+</pre></div>
+This sets up an alias called <code>cls</code> . It will be another name for clear . When you type cls, it will clear the screen just as though you had typed clear . Your alias saves a few keystrokes, sure. But, if you frequently move between Windows and Linux command line, you can find yourself typing the Windows <code>cls</code> command on a Linux machine that doesn’t know what you mean. Now it will know.</p>
+<p>Aliases can be much more intricate than that simple example. Here’s an alias called <code>pf</code> (for process find) that is just a little more complex. Note the use of quotation marks around the command sequence. This is required if the command sequence has spaces in it. This alias uses the <code>ps</code> command to list the running processes and then pipes them through the <code>grep</code> command. The grep command looks for entries in the output from ps that match the command line parameter <code>$1</code>.</p>
+<p><div class="codehilite"><pre><span></span><span class="nb">alias</span> <span class="nv">pf</span><span class="o">=</span><span class="s2">&quot;ps -e | grep </span><span class="nv">$1</span><span class="s2">&quot;</span>
+</pre></div>
+If you wanted to discover the process ID (PID) of the shutter process—or to find out if shutter was even running—you could use the alias like this. Type <code>pf</code> followed by a space, and the name of the process you are interested in:</p>
+<p><div class="codehilite"><pre><span></span>pf shutter
+</pre></div>
+alias command in terminal window</p>
+<div class="admonition warn">
+<p class="admonition-title">Warn</p>
+<p>Aliases defined on the command line will die with the terminal window. When you close it, they are gone. To make your aliases always be available to you, add them to the <code>.bash_aliases</code> file in your home directory such as <code>.bash_profile</code> and <code>.bashrc</code></p>
+</div>
+<h2 id="2-cat">2. cat<a class="headerlink" href="#2-cat" title="Permanent link">&para;</a></h2>
+<p>The cat command (short for “concatenate”) lists the contents of files to the terminal window. This is faster than opening the file in an editor, and there’s no chance you can accidentally alter the file. To read the contents of your <code>.bash_log_out</code> file, type the following command while the home directory is your current working directory, as it is by default.</p>
+<div class="codehilite"><pre><span></span>cat .bash_logout
+</pre></div>
+
+<p>With files longer than the number of lines in your terminal window, the text will whip past too fast for you to read. You can pipe the output from cat through less to make the process more manageable.  With <code>less</code> you can scroll forward and backward through the file using the Up and Down Arrow keys, the PgUp and PgDn keys, and the Home and End keys. Type <code>q</code> to quit from <code>less</code>.</p>
+<div class="codehilite"><pre><span></span>cat .bashrc <span class="p">|</span> less
+cat .bashrc <span class="p">|</span> Less in a terminal window
+</pre></div>
+
+<h2 id="3-cd">3. cd<a class="headerlink" href="#3-cd" title="Permanent link">&para;</a></h2>
+<p>The cd command changes your current directory. In other words, it moves you to a new place in the filesystem.If you are changing to a directory that is within your current directory, you can simply type cd and the name of the other directory.</p>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> work
+</pre></div>
+
+<p>If you are changing to a directory elsewhere within the filesystem directory tree, provide the path to the directory with a leading <code>/</code></p>
+<p><div class="codehilite"><pre><span></span><span class="nb">cd</span> /usr/local/bin
+</pre></div>
+To quickly return to your home directory, use the ~ (tilde) character as the directory name.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use the double dot symbol <code>..</code> to represent the parent of the current directory. You can type the following command to go up a directory:</p>
+</div>
+<p><div class="codehilite"><pre><span></span><span class="nb">cd</span> ..
+</pre></div>
+Imagine you are in a directory. The parent directory has other directories in it, as well as the directory you’re currently in. To change into one of those other directories, you can use the <code>..</code> symbol to shorten what you have to type.</p>
+<div class="codehilite"><pre><span></span><span class="nb">cd</span> ../games
+</pre></div>
+
+<h2 id="4-chmod">4. chmod<a class="headerlink" href="#4-chmod" title="Permanent link">&para;</a></h2>
+<p>The chmod command sets the file permissions flags on a file or folder. The flags define who can read, write to or execute the file. When you list files with the <code>-l</code> (long format) option you’ll see a string of characters that look like</p>
+<p><div class="codehilite"><pre><span></span>-rwxrwxrwx
+</pre></div>
+If the first character is a <code>-</code> the item is a file. if it is a <code>d</code> the item is a directory.</p>
+<p>The rest of the string is three sets of three characters. From the left, the first three represent the file permissions of the <code>owner</code>, the middle three represent the file permissions of the <code>group</code> and the rightmost three characters represent the permissions for <code>others</code>. In each set:-</p>
+<ol>
+<li><code>r</code> stands for read</li>
+<li><code>w</code> stands for write</li>
+<li><code>x</code> stands for execute.</li>
+</ol>
+<p>If the r, w, or x character is present that file permission is granted. If the letter is not present and a <code>-</code> appears instead, that file permission is not granted.</p>
+<p>One way to use <code>chmod</code> is to provide the permissions you wish to give to the owner, group, and others as a 3 digit number.  The leftmost digit represents the owner. The middle digit represents the group. The rightmost digit represents the others. The digits you can use and what they represent are listed here:</p>
+<p><div class="codehilite"><pre><span></span><span class="m">0</span>: No permission
+<span class="m">1</span>: Execute permission
+<span class="m">2</span>: Write permission
+<span class="m">3</span>: Write and execute permissions
+<span class="m">4</span>: Read permission
+<span class="m">5</span>: Read and execute permissions
+<span class="m">6</span>: Read and write permissions
+<span class="m">7</span>: Read, write and execute permissions
+</pre></div>
+Looking at our <code>example.txt</code> file, we can see that all three sets of characters are <code>rwx</code>. That means everyone has read, write and execute rights with the file.</p>
+<p>To set the permission to be read, write, and execute (7 from our list) for the owner; read and write (6 from our list) for the group; and read and execute (5 from our list) for the others we’d need to use the digits 765 with the chmod command:
+<div class="codehilite"><pre><span></span>chmod -R <span class="m">765</span> example.txt
+chmod <span class="nb">command</span> in a terminal window
+</pre></div>
+To set the permission to be read, write and execute (7 from our list) for the owner, and read and write (6 from our list) for the group and for the others we’d need to use the digits 766 with the chmod command:</p>
+<div class="codehilite"><pre><span></span>chmod <span class="m">766</span> example.txt
+</pre></div>
+
+<h2 id="5-chown">5. chown<a class="headerlink" href="#5-chown" title="Permanent link">&para;</a></h2>
+<p>The <code>chown</code> command allows you to change the owner and group owner of a file. Listing our <code>example.txt</code> file with <code>ls -l</code> we can see <code>amar amar</code> in the file description. </p>
+<ol>
+<li>The first of these indicates the name of the file owner, which in this case is the user amar. </li>
+<li>The second entry shows that the name of the group owner is also amar.  </li>
+</ol>
+<p>Each user has a default group created when the user is created. That user is the only member of that group. <strong>This shows that the file is not shared with any other groups of users.</strong></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>You can use <code>chown</code> to change the owner or group, or both of a file. You must provide the name of the owner and the group, separated by a : character. You will need to use sudo. To retain amar as the owner of the file but to set mary as the group owner, use this command:
+<div class="codehilite"><pre><span></span>sudo chown amar:mary example.txt
+</pre></div></p>
+</div>
+<p>To change both the owner and the group owner to mary, you would use the following command;</p>
+<div class="codehilite"><pre><span></span>sudo chown mary:mary example.txt
+</pre></div>
+
+<p>To change the file so that amar is once more the file owner and the group owner, use this command:</p>
+<div class="codehilite"><pre><span></span>sudo chown amar:amar example.txt
+</pre></div>
+
+<h2 id="6-curl">6. curl<a class="headerlink" href="#6-curl" title="Permanent link">&para;</a></h2>
+<p>The <code>curl</code> command is a tool to retrieve information and files from Uniform Resource Locators (URLs) or internet addresses.</p>
+<p>The curl command may not be provided as a standard part of your Linux distribution. Use <code>apt-get</code> to install this package onto your system if you’re using Ubuntu or another Debian-based distribution. On other Linux distributions, use your Linux distribution’s package management tool instead.</p>
+<p><div class="codehilite"><pre><span></span>sudo apt-get install curl
+</pre></div>
+Suppose you want to retrieve a single file from a GitHub repository. There is no officially supported way to this. You’re forced to clone the entire repository. With curl however, we can retrieve the file we want on its own.</p>
+<p>This command retrieves the file for us. Note that you need to specify the name of the file to save it in, using the <code>-o</code> (output) option. <strong>If you do not do this, the contents of the file are scrolled rapidly in the terminal window but not saved to your computer.</strong></p>
+<div class="codehilite"><pre><span></span>curl https://raw.githubusercontent.com/torvalds/linux/master/kernel/events/core.c -o core.c
+</pre></div>
+
+<p>If you don’t want to see the download progress information use the <code>-s</code> (silent) option.</p>
+<div class="codehilite"><pre><span></span>curl -s https://raw.githubusercontent.com/torvalds/linux/master/kernel/events/core.c -o core.c
+</pre></div>
+
+<h2 id="7-df">7. df<a class="headerlink" href="#7-df" title="Permanent link">&para;</a></h2>
+<p>The <code>df</code> command shows the size, used space, and available space on the mounted filesystems of your computer.</p>
+<p>Two of the most useful options are the <code>-h</code> (human readable) and <code>-x</code> (exclude) options. The human-readable option displays the sizes in Mb or Gb instead of in bytes. The exclude option allows you to tell <code>df</code> to discount filesystems you are not interested in. For example, the squashfs pseudo-filesystems that are created when you install an application with the snap command.</p>
+<div class="codehilite"><pre><span></span>df -h -x squashfs
+</pre></div>
+
+<h2 id="8-diff">8. diff<a class="headerlink" href="#8-diff" title="Permanent link">&para;</a></h2>
+<p>The <code>diff</code> command compares two text files and shows the differences between them. There are many options to tailor the display to your requirements.</p>
+<p>The <code>-y</code> (side by side) option shows the line differences side by side. The <code>-w</code> (width) option lets you specify the maximum line width to use to avoid wraparound lines. The two files are called <code>alpha1.txt</code> and <code>alpha2.txt</code> in this example. The <code>--suppress-common-lines</code> prevents diff from listing the matching lines, letting you focus on the lines which have differences.</p>
+<div class="codehilite"><pre><span></span>diff -y -W <span class="m">70</span> alpha1.txt alpha2.txt --suppress-common-lines
+</pre></div>
+
+<h2 id="9-echo">9. echo<a class="headerlink" href="#9-echo" title="Permanent link">&para;</a></h2>
+<p>The echo command prints (echoes) a string of text to the terminal window.</p>
+<p>The command below will print the words “A string of text” on the terminal window.</p>
+<div class="codehilite"><pre><span></span><span class="nb">echo</span> A string of text
+</pre></div>
+
+<p>The echo command can show the value of environment variables, for example, the $USER, $HOME, and $PATH environment variables. These hold the values of the name of the user, the user’s home directory, and the path searched for matching commands when the user types something on the command line.</p>
+<div class="codehilite"><pre><span></span><span class="nb">echo</span> <span class="nv">$USER</span>
+<span class="nb">echo</span> <span class="nv">$HOME</span>
+<span class="nb">echo</span> <span class="nv">$PATH</span>
+</pre></div>
+
+<p>The following command will cause a bleep to be issued. The -e (escape code) option interprets the escaped a character as a ‘bell’ character.</p>
+<div class="codehilite"><pre><span></span><span class="nb">echo</span> -e <span class="s2">&quot;\a&quot;</span>
+</pre></div>
+
+<p>The <code>echo</code> command is also invaluable in shell scripts. A script can use this command to generate visible output to indicate the progress or results of the script as it is executed.</p>
+<h2 id="10-exit">10. exit<a class="headerlink" href="#10-exit" title="Permanent link">&para;</a></h2>
+<p>The exit command will close a terminal window, end the execution of a shell script, or log you out of an SSH remote access session.</p>
+<div class="codehilite"><pre><span></span><span class="nb">exit</span>
+</pre></div>
+
+<h2 id="11-find">11. find<a class="headerlink" href="#11-find" title="Permanent link">&para;</a></h2>
+<p>Use the find command to track down files that you know exist if you can’t remember where you put them. You must tell find where to start searching from and what it is looking for. In this example, the . matches the current folder and the -name option tells find to look for files with a name that matches the search pattern.</p>
+<p>You can use wildcards, where <code>*</code> represents any sequence of characters and <code>?</code> represents any single character. We’re using <em>ones</em> to match any file name containing the sequence “ones.” This would match words like bones, stones, and lonesome.</p>
+<div class="codehilite"><pre><span></span>find . -name *ones*
+find <span class="nb">command</span> in a terminal window
+</pre></div>
+
+<p>As we can see, find has returned a list of matches. One of them is a directory called Ramones. We can tell find to restrict the search to files only. We do this using the -type option with the f parameter. The f parameter stands for files.</p>
+<p><div class="codehilite"><pre><span></span>find . -type f -name *ones*
+</pre></div>
+If you want the search to be case insensitive use the -iname (insensitive name) option.</p>
+<div class="codehilite"><pre><span></span>find . -iname *wild*
+</pre></div>
+
+<h2 id="12-finger">12. finger<a class="headerlink" href="#12-finger" title="Permanent link">&para;</a></h2>
+<p>The finger command gives you a short dump of information about a user, including the time of the user’s last login, the user’s home directory, and the user account’s full name.</p>
+<h2 id="13-free">13. free<a class="headerlink" href="#13-free" title="Permanent link">&para;</a></h2>
+<p>The free command gives you a summary of the memory usage with your computer. It does this for both the main Random Access Memory (RAM) and swap memory. The -h (human) option is used to provide human-friendly numbers and units. Without this option, the figures are presented in bytes.</p>
+<div class="codehilite"><pre><span></span>free -h
+</pre></div>
+
+<h2 id="14-grep">14. grep<a class="headerlink" href="#14-grep" title="Permanent link">&para;</a></h2>
+<p>The grep utility searches for lines which contain a search pattern. When we looked at the alias command, we used grep to search through the output of another program, ps . The grep command can also search the contents of files. Here we’re searching for the word “train” in all text files in the current directory.</p>
+<div class="codehilite"><pre><span></span>grep train *.txt
+</pre></div>
+
+<p>The output lists the name of the file and shows the lines that match. The matching text is highlighted.</p>
+<p>grep command in a terminal window</p>
+<p>The functionality and sheer usefulness of grep definitely warrants you checking out its man page.</p>
+<h2 id="15-groups">15. groups<a class="headerlink" href="#15-groups" title="Permanent link">&para;</a></h2>
+<p>The groups command tells you which groups a user is a member of.</p>
+<div class="codehilite"><pre><span></span>groups dave
+groups mary
+</pre></div>
+
+<h2 id="16-gzip">16. gzip<a class="headerlink" href="#16-gzip" title="Permanent link">&para;</a></h2>
+<p>The gzip command compresses files. By default, it removes the original file and leaves you with the compressed version. To retain both the original and the compressed version, use the -k (keep) option.</p>
+<div class="codehilite"><pre><span></span>gzip -k core.c
+</pre></div>
+
+<h2 id="17-head">17. head<a class="headerlink" href="#17-head" title="Permanent link">&para;</a></h2>
+<p>The head command gives you a listing of the first 10 lines of a file. If you want to see fewer or more lines, use the -n (number) option. In this example, we use head with its default of 10 lines. We then repeat the command asking for only five lines.</p>
+<div class="codehilite"><pre><span></span>head -core.c
+head -n <span class="m">5</span> core.c
+</pre></div>
+
+<h2 id="18-history">18. history<a class="headerlink" href="#18-history" title="Permanent link">&para;</a></h2>
+<p>The history command lists the commands you have previously issued on the command line. You can repeat any of the commands from your history by typing an exclamation point ! and the number of the command from the history list.</p>
+<p><div class="codehilite"><pre><span></span>!188
+</pre></div>
+Typing two exclamation points repeats your previous command.</p>
+<p>!!</p>
+<h2 id="19-kill">19. kill<a class="headerlink" href="#19-kill" title="Permanent link">&para;</a></h2>
+<p>The kill command allows you to terminate a process from the command line. You do this by providing the process ID (PID) of the process to kill. Don’t kill processes willy-nilly. You need to have a good reason to do so. In this example, we’ll pretend the shutter program has locked up.</p>
+<p>To find the PID of shutter we’ll use our ps and grep trick from the section about the alias command, above. We can search for the shutter process and obtain its PID as follows:
+<div class="codehilite"><pre><span></span>ps -e <span class="p">|</span> grep shutter.
+</pre></div>
+Once we have determined the PID—1692 in this case—we can kill it as follows:</p>
+<p><div class="codehilite"><pre><span></span><span class="nb">kill</span> <span class="m">1692</span>
+</pre></div>
+kill command in a terminal window</p>
+<h2 id="20-less">20. less<a class="headerlink" href="#20-less" title="Permanent link">&para;</a></h2>
+<p>The less command allows you to view files without opening an editor. It’s faster to use, and there’s no chance of you inadvertently modifying the file. With less you can scroll forward and backward through the file using the Up and Down Arrow keys, the PgUp and PgDn keys and the Home and End keys. Press the Q key to quit from less.</p>
+<p>To view a file provide its name to less as follows:</p>
+<p><div class="codehilite"><pre><span></span>less core.c
+</pre></div>
+less command in a terminal window</p>
+<p>You can also pipe the output from other commands into less. To see the output from ls for a listing of your entire hard drive, use the following command:</p>
+<div class="codehilite"><pre><span></span>ls -R / <span class="p">|</span> less
+</pre></div>
+
+<p>less command in a terminal window</p>
+<p>Use / to search forward in the file and use ? to search backward.</p>
+<h2 id="21-ls">21. ls<a class="headerlink" href="#21-ls" title="Permanent link">&para;</a></h2>
+<p>This might be the first command the majority of Linux users meet. It lists the files and folders in the directory you specify. By default, ls looks in the current directory. There are a great many options you can use with ls , and we strongly advise reviewing its the man page. Some common examples are presented here.</p>
+<p>To list the files and folders in the current directory:
+<div class="codehilite"><pre><span></span>ls
+</pre></div>
+To list the files and folders in the current directory with a detailed listing use the -l (long) option:
+<div class="codehilite"><pre><span></span>ls -l
+</pre></div>
+To use human-friendly file sizes include the -h (human) option:</p>
+<p><div class="codehilite"><pre><span></span>ls -lh
+</pre></div>
+To include hidden files use the -a (all files) option:</p>
+<p><div class="codehilite"><pre><span></span>ls -lha
+</pre></div>
+ls command in a terminal window</p>
+<h2 id="22-man">22. man<a class="headerlink" href="#22-man" title="Permanent link">&para;</a></h2>
+<p>The man command displays the “man pages” for a command in less . The man pages are the user manual for that command. Because man uses less to display the man pages, you can use the search capabilities of less.</p>
+<p>For example, to see the man pages for chown, use the following command:</p>
+<p><div class="codehilite"><pre><span></span>man chown
+</pre></div>
+Use the Up and Down arrow or PgUp and PgDn keys to scroll through the document. Press q to quit the man page or pressh for help.</p>
+<p>man command in a terminal window</p>
+<h2 id="23-mkdir">23. mkdir<a class="headerlink" href="#23-mkdir" title="Permanent link">&para;</a></h2>
+<p>The mkdir command allows you to create new directories in the filesystem. You must provide the name of the new directory to mkdir. If the new directory is not going to be within the current directory, you must provide the path to the new directory.</p>
+<p>To create two new directories in the current directory called “invoices” and “quotes,” use these two commands:</p>
+<div class="codehilite"><pre><span></span>mkdir invoices
+mkdir quotes
+</pre></div>
+
+<p>To create a new directory called “2019” inside the “invoices” directory, use this command:</p>
+<div class="codehilite"><pre><span></span>mkdir invoices/2109
+</pre></div>
+
+<p>If you are going to create a directory, but its parent directory does not exist, you can use the -p (parents) option to have mkdir create all of the required parent directories too. In the following command, we are creating the “2019” directory inside the “yearly” directory inside the “quotes” directory. The “yearly” directory does not exist, but we can have mkdir create all the specified directories at once:</p>
+<p><div class="codehilite"><pre><span></span>mkdir -p quotes/yearly/2019
+</pre></div>
+The “yearly” directory is also created.</p>
+<h2 id="24-mv">24. mv<a class="headerlink" href="#24-mv" title="Permanent link">&para;</a></h2>
+<p>The mv command allows you to move files and directories from directory to directory. It also allows you to rename files.</p>
+<p>To move a file you must tell mv where the file is and where you want it to be moved to. In this example, we’re moving a file called apache.pdf from the <code>~/Document/Ukulele</code> directory and placing it in the current directory, represented by the single <code>.</code> character.</p>
+<p><div class="codehilite"><pre><span></span>mv ~/Documents/Ukulele/Apache.pdf .
+</pre></div>
+To rename the file, you “move” it into a new file with the new name.</p>
+<div class="codehilite"><pre><span></span>mv Apache.pdf The_Shadows_Apache.pdf
+</pre></div>
+
+<p>The file move and rename action could have been achieved in one step:</p>
+<div class="codehilite"><pre><span></span>mv ~/Documents/Ukulele/Apache.pdf ./The_Shadows_Apache.pdf
+</pre></div>
+
+<h2 id="25-passwd">25. passwd<a class="headerlink" href="#25-passwd" title="Permanent link">&para;</a></h2>
+<p>The <code>passwd</code> command lets you change the password for a user. Just type passwd to change your own password.</p>
+<p>You can also change the password of another user account, but you must use sudo. You will be asked to enter the new password twice.</p>
+<div class="codehilite"><pre><span></span>sudo passwd mary
+</pre></div>
+
+<h2 id="26-ping">26. ping<a class="headerlink" href="#26-ping" title="Permanent link">&para;</a></h2>
+<p>The ping command lets you verify that you have network connectivity with another network device. It is commonly used to help troubleshoot networking issues. To use ping, provide the IP address or machine name of the other device.</p>
+<div class="codehilite"><pre><span></span>ping <span class="m">192</span>.168.4.18
+</pre></div>
+
+<p>The ping command will run until you stop it with <code>Ctrl+C</code>.</p>
+<p>Here’s what’s going on here:</p>
+<p>The device at IP address 192.168.4.18 is responding to our ping requests and is sending back packets of 64 bytes.
+The Internet Control Messaging Protocol (ICMP) sequence numbering allows us to check for missed responses (dropped packets).
+The TTL figure is the “time to live” for a packet. Each time the packet goes through a router, it is (supposed to be) decremented by one. If it reaches zero the packet is thrown away. The aim of this is to prevent network loopback problems from flooding the network.
+The time value is the duration of the round trip from your computer to the device and back. Simply put, the lower this time, the better.
+To ask ping to run for a specific number of ping attempts, use the <code>-c</code> (count) option.</p>
+<p><div class="codehilite"><pre><span></span>ping -c <span class="m">5</span> <span class="m">192</span>.168.4.18
+</pre></div>
+To hear a ping, use the <code>-a</code> (audible) option.</p>
+<div class="codehilite"><pre><span></span>ping -a <span class="m">192</span>.168.4.18
+</pre></div>
+
+<h2 id="27-ps">27. ps<a class="headerlink" href="#27-ps" title="Permanent link">&para;</a></h2>
+<p>The ps command lists running processes. Using ps without any options causes it to list the processes running in the current shell.</p>
+<div class="codehilite"><pre><span></span>ps
+</pre></div>
+
+<p>To see all the processes related to a particular user, use the -u (user) option. This is likely to be a long list, so for convenience pipe it through less.</p>
+<div class="codehilite"><pre><span></span>ps -u dave <span class="p">|</span> less
+</pre></div>
+
+<p>To see every process that is running, use the -e (every process) option:</p>
+<div class="codehilite"><pre><span></span>ps -e <span class="p">|</span> less
+</pre></div>
+
+<h2 id="28-pwd">28. pwd<a class="headerlink" href="#28-pwd" title="Permanent link">&para;</a></h2>
+<p>Nice and simple, the pwd command prints the working directory (the current directory) from the root / directory.</p>
+<div class="codehilite"><pre><span></span><span class="nb">pwd</span>
+</pre></div>
+
+<p>pwd command in a terminal window</p>
+<h2 id="29-shutdown">29. shutdown<a class="headerlink" href="#29-shutdown" title="Permanent link">&para;</a></h2>
+<p>The shutdown command lets you shut down or reboot your Linux system.</p>
+<p>Using shutdown with no parameters will shut down your computer in one minute.</p>
+<div class="codehilite"><pre><span></span>shutdown
+</pre></div>
+
+<p>To shut down immediately, use the now parameter.</p>
+<div class="codehilite"><pre><span></span>shutdown now
+</pre></div>
+
+<p>You can also schedule a shutdown and inform any logged in users of the pending shutdown. To let the shutdown command know when you want it to shut down, you provide it with a time. This can be a set number of minutes from now, such as +90 or a precise time, like 23:00. Any text message you provide is broadcast to logged in users.</p>
+<div class="codehilite"><pre><span></span>shutdown <span class="m">23</span>:00 Shutdown tonight at <span class="m">23</span>:00, save your work and log out before <span class="k">then</span>!
+</pre></div>
+
+<p>To cancel a shutdown, use the <code>-c</code> (cancel) option. Here we have scheduled a shutdown for fifteen minutes time from now—and then changed our minds.</p>
+<div class="codehilite"><pre><span></span>shutdown +15 Shutting down in <span class="m">15</span> minutes!
+shutdown -c
+</pre></div>
+
+<p>Shutdown -c cancel command</p>
+<h2 id="30-ssh">30. SSH<a class="headerlink" href="#30-ssh" title="Permanent link">&para;</a></h2>
+<p>Use the ssh command to make a connection to a remote Linux computer and log into your account. To make a connection, you must provide your user name and the IP address or domain name of the remote computer. In this example, the user mary is logging into the computer at 192.168.4.23. Once the connection is established, she is asked for her password.</p>
+<div class="codehilite"><pre><span></span>ssh mary@192.168.4.23
+ssh <span class="nb">command</span> in a terminal window
+</pre></div>
+
+<p>Her user name and password are verified and accepted, and she is logged in. Notice that her prompt has changed from “Nostromo” to “howtogeek.”</p>
+<p>Mary issues the w command to list the current users on “howtogeek” system. She is listed as being connected from pts/1, which is a pseudo-terminal slave. That is, it is not a terminal directly connected to the computer.</p>
+<p>To close the session, mary types exit and is returned to the shell on the “Nostromo” computer.</p>
+<p><code>w</code>
+<code>exit</code>
+w and exit commands in a terminal window</p>
+<h2 id="31-sudo">31. sudo<a class="headerlink" href="#31-sudo" title="Permanent link">&para;</a></h2>
+<p>The sudo command is required when performing actions that require root or superuser permissions, such as changing the password for another user.</p>
+<div class="codehilite"><pre><span></span>sudo passwd mary
+</pre></div>
+
+<p>passwd command in a terminal window</p>
+<h2 id="32-tail">32. tail<a class="headerlink" href="#32-tail" title="Permanent link">&para;</a></h2>
+<p>The tail command gives you a listing of the last 10 lines of a file. If you want to see fewer or more lines, use the -n (number) option. In this example, we use tail with its default of 10 lines. We then repeat the command asking for only five lines.</p>
+<div class="codehilite"><pre><span></span>tail core.c
+tail -n <span class="m">5</span> core.c
+tail <span class="nb">command</span> in a terminal window
+</pre></div>
+
+<h2 id="33-tar">33. tar<a class="headerlink" href="#33-tar" title="Permanent link">&para;</a></h2>
+<p>With the tar command, you can create an archive file (also called a tarball) that can contain many other files. This makes it much more convenient to distribute a collection of files. You can also use tar to extract the files from an archive file. It is common to ask tar to compress the archive. If you do not ask for compression, the archive file is created uncompressed.</p>
+<p>To create an archive file, you need to tell tar which files to include in the archive file, and the name you wish the archive file to have.</p>
+<p>In this example, the user is going to archive all of the files in the Ukulele directory, which is in the current directory.</p>
+<p><code>ls</code> command in the terminal window</p>
+<p>They have used the <code>-c</code> (create) option and the <code>-v</code> (verbose) option. The verbose option gives some visual feedback by listing the files to the terminal window as they are added to the archive. The <code>-f</code> (filename) option is followed by the desired name of the archive. In this case, it is songs.tar.</p>
+<p><div class="codehilite"><pre><span></span>tar -cvf songs.tar Ukulele/
+</pre></div>
+tar -cvf command in a terminal window</p>
+<p>The files are listed to the terminal window as they are added to the archive file.</p>
+<p>There are two ways to tell tar that you want the archive file to be compressed. The first is with the -z (gzip) option. This tells tar to use the gzip utility to compress the archive once it has been created.</p>
+<p>It is usual to add <code>.gz</code> as suffix to this type of archive. That allows anyone who is extracting files from it to know which commands to pass to tar to correctly retrieve the files.</p>
+<div class="codehilite"><pre><span></span>tar -cvzf songs.tar.gz Ukulele/
+</pre></div>
+
+<p>The files are listed to the terminal window as they are added to the archive file as before, but the creation of the archive will take a little longer because of the time required for the compression.</p>
+<p>To create an archive file that is compressed using a superior compression algorithm giving a smaller archive file use the -j (bzip2) option.</p>
+<div class="codehilite"><pre><span></span>tar -cvjf songs.tar.bz2 Ukulele/
+</pre></div>
+
+<p>Once again, the files are listed as the archive is created. The -j option is noticeably slower than the -z option.</p>
+<p>If you are archiving a great many files, you must choose between the -z option for decent compression and reasonable speed, or the -j option for better compression and slower speed.</p>
+<p>As can be seen in the screenshot below, the “.tar” file is the largest, the “.tar.gz” is smaller, and the “.tar.bz2” is the smallest of the archives.</p>
+<p>To extract files from an archive file use the -x (extract) option. The -v (verbose) and -f (filename) options behave as they do when creating archives. Use ls to confirm which type of archive you are going to extract the files from, then issue the following command.</p>
+<div class="codehilite"><pre><span></span>ls
+tar -xvf songs.tar
+</pre></div>
+
+<p>ls and tar -xvf commands in a terminal window</p>
+<p>The files are listed as they are extracted. Note that the Ukulele directory is also recreated for you.</p>
+<p>To extract files from a “.tar.gz” archive, use the -z (gzip) option.</p>
+<p><div class="codehilite"><pre><span></span>tar -xvzf songs.tar.gz
+</pre></div>
+tar -xvzf command in a terminal window</p>
+<p>Finally, to extract files from a “.tar.bz2” archive use the -j option instead of the -z (gzip) option.</p>
+<p><div class="codehilite"><pre><span></span>tar -xvjf songs.tar.bz2
+</pre></div>
+tar -xvjf command in a terminal window</p>
+<p>RELATED: How to Extract Files From a .tar.gz or .tar.bz2 File on Linux</p>
+<h2 id="34-top">34. top<a class="headerlink" href="#34-top" title="Permanent link">&para;</a></h2>
+<p>The top command shows you a real-time display of the data relating to your Linux machine. The top of the screen is a status summary.</p>
+<p>The first line shows you the time and how long your computer has been running for, how many users are logged into it, and what the load average has been over the past one, five, and fifteen minutes.</p>
+<p>The second line shows the number of tasks and their states: running, stopped, sleeping and zombie.</p>
+<p>The third line shows CPU information. Here’s what the fields mean:</p>
+<p><div class="codehilite"><pre><span></span>us: value is the CPU <span class="nb">time</span> the CPU spends executing processes <span class="k">for</span> users, in “user space”
+sy: value is the CPU <span class="nb">time</span> spent on running system “kernel space” processes
+ni: value is the CPU <span class="nb">time</span> spent on executing processes with a manually <span class="nb">set</span> nice value
+id: is the amount of CPU idle <span class="nb">time</span>
+wa: value is the <span class="nb">time</span> the CPU spends waiting <span class="k">for</span> I/O to <span class="nb">complete</span>
+hi: The CPU <span class="nb">time</span> spent servicing hardware interrupts
+si: The CPU <span class="nb">time</span> spent servicing software interrupts
+st: The CPU <span class="nb">time</span> lost due to running virtual machines <span class="o">(</span>“steal time”<span class="o">)</span>
+</pre></div>
+The fourth line shows the total amount of physical memory, and how much is free, used and buffered or cached.</p>
+<p>The fifth line shows the total amount of swap memory, and how much is free, used and available  (taking into account memory that is expected to be recoverable from caches).</p>
+<p>top command in a terminal window</p>
+<p>The user has pressed the E key to change the display into more humanly digestible figures instead of long integers representing bytes.</p>
+<p>The columns in the main display are made up of:</p>
+<p><div class="codehilite"><pre><span></span>PID: Process ID
+USER: Name of the owner of the process
+PR: Process priority
+NI: The nice value of the process
+VIRT: Virtual memory used by the process
+RES: Resident memory used by the process
+SHR: Shared memory used by the process
+S: Status of the process. See the list below of the values this field can take
+%CPU: the share of CPU <span class="nb">time</span> used by the process since last update
+%MEM: share of physical memory used
+TIME+: total CPU <span class="nb">time</span> used by the task in hundredths of a second
+COMMAND: <span class="nb">command</span> name or <span class="nb">command</span> line <span class="o">(</span>name + options<span class="o">)</span>
+</pre></div>
+(The command column didn’t fit into the screenshot.)</p>
+<p>The status of the process can be one of:</p>
+<p><div class="codehilite"><pre><span></span>D: Uninterruptible sleep
+R: Running
+S: Sleeping
+T: Traced <span class="o">(</span>stopped<span class="o">)</span>
+Z: Zombie
+Press the Q key to <span class="nb">exit</span> from top.
+</pre></div>
+RELATED: How to Set Process Priorities With nice and renice on Linux</p>
+<h2 id="35-uname">35. uname<a class="headerlink" href="#35-uname" title="Permanent link">&para;</a></h2>
+<p>You can obtain some system information regarding the Linux computer you’re working on with the uname command.</p>
+<p>Use the -a (all) option to see everything.
+Use the -s (kernel name) option to see the type of kernel.
+Use the -r (kernel release) option to see the kernel release.
+Use the -v (kernel version) option to see the kernel version.
+uname -a
+uname -s
+uname -r
+uname -v
+uname command in a terminal window</p>
+<h2 id="36-w">36. w<a class="headerlink" href="#36-w" title="Permanent link">&para;</a></h2>
+<p>The w command lists the currently logged in users.</p>
+<p><div class="codehilite"><pre><span></span>w
+</pre></div>
+w command in a terminal window</p>
+<h2 id="37-whoami">37. whoami<a class="headerlink" href="#37-whoami" title="Permanent link">&para;</a></h2>
+<p>Use <code>whoami</code> to find out who you are logged in as or who is logged into an unmanned Linux terminal.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../android_device/" title="Setting andoid device" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Setting andoid device
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../maven/downgrade_maven/" title="Downgrading maven" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Downgrading maven
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019  Amarjit Dhillon
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://github.com/odd-snail/" class="md-footer-social__link fa fa-github"></a>
+    
+      <a href="https://twitter.com/smartsplash" class="md-footer-social__link fa fa-twitter"></a>
+    
+      <a href="https://www.linkedin.com/in/webdexter/" class="md-footer-social__link fa fa-linkedin"></a>
+    
+      <a href="https://www.facebook.com/Amar.314/" class="md-footer-social__link fa fa-facebook"></a>
+    
+      <a href="https://instagram.com/graphcms" class="md-footer-social__link fa fa-instagram"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.267712eb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
