@@ -77,7 +77,6 @@ markdown_extensions:
 
 disqus: 'amardhillon'
 
-
 nav:
   - "Installing Flink": "installing_flink/flink.md"
   - "Resume": "Resume/index.md"
@@ -94,7 +93,9 @@ nav:
     - "Downgrading maven": "maven/downgrade_maven/index.md"
   - "MySQL": 
     - "Initial Setup": "mysql/mysql_basics.md"
-    - "JDBC Statements": "mysql/JdbcStatements.md"
+    - "JDBC Statements": "mysql/JdbcStatements.md" 
+  - "Cpanel and Git": "blogs/gitAndCpanel.md"
+
 
 
 
