@@ -1,26 +1,30 @@
 # Project information
-site_name: "Amarjit Dhillon's Blog"
-site_description: 'A persanal blog of Amarjit Singh Dhillon'
-site_author: 'Amarjit Singh Dhillon'
+site_name: "Amar Dhillon's Blog ☕️"
+site_description: 'A persanal blog by Amarjit Singh Dhillon'
+
+site_author: 'Amar Dhillon'
 site_url: 'https://www.asdhillon.com'
 
 # Repository
 repo_name: 'odd-snail/www.asdhillon.com'
-# repo_url: 'https://github.com/odd-snail/www.amarjitdhillon.com'
 
-# Copyright
-copyright: 'Copyright &copy; 2019  Amarjit Dhillon'
+# Copyright related
+copyright: 'Copyright &copy; 2020  Amarjit Dhillon'
 
 # Configuration
 theme:
-  name: 'material'
+  name: 'material'      # this is a google material theme
   language: 'en'
   palette:
-    primary: 'blue'
-    accent: 'red'
+    primary: 'indigo'   # this is the color for top navigation bar
+    accent: 'red'       # this is hover color for links
+  # logo: 'resources/logo.svg'  # logo image which is shown at top nav-bar
+  # favicon: 'res/favicon.ico'
+  feature:
+    tabs: true          # changing to true will move the right nav to top nav
+  inject_js: true
+  # custom_dir: 'custom_theme/'
   font:
-    # text: 'Palatino'
-    # code: 'Palatino'
     text: 'Roboto'
     code: 'Roboto Mono'
 
@@ -37,11 +41,11 @@ extra:
     - type: 'facebook'
       link: 'https://www.facebook.com/Amar.314/'
     - type: 'instagram'
-      link: 'https://instagram.com/graphcms'
+      link: 'https://www.instagram.com/amarjit_dhillon/'
 
 extra_css:
-  - 'stylesheets/extra.css'
-       
+  - 'stylesheets/extra.css' # this is used to customize the material theme; I changed the footer using this
+
 # # Google Analytics
 # google_analytics:
 #   - 'UA-XXXXXXXX-X'
@@ -78,24 +82,25 @@ markdown_extensions:
 disqus: 'amardhillon'
 
 nav:
-  - "Installing Flink": "installing_flink/flink.md"
-  - "Resume": "Resume/index.md"
-  - "Wget": "wget/wget.md"
-  - "WSO2": 
-    - "Install H2": "wso2/h2/index.md"
-    - "Setup JMS": "wso2/jms/index.md"
-  - "Linux": 
-    - "Setting Java Home": "linux/java_home/index.md"
-    - "Setting andoid device": "linux/android_device.md"
-    - "Commands": "linux/commands.md"
-
-  - "Maven": 
+  - "Technical":
+    - "H2 Database for WSO2 Products": "wso2/h2/index.md"
+    - "JMS Queue in WSO2 IoT Server": "wso2/jms/index.md"
+    - "Clone private repo into Cpanel": "blogs/gitAndCpanel.md"
     - "Downgrading maven": "maven/downgrade_maven/index.md"
-  - "MySQL": 
-    - "Initial Setup": "mysql/mysql_basics.md"
-    - "JDBC Statements": "mysql/JdbcStatements.md" 
-  - "Cpanel and Git": "blogs/gitAndCpanel.md"
+    - "Wget on Mac": "wget/wget.md"
+    - "Installing Flink": "installing_flink/flink.md"
 
+    - "Linux": 
+      - "Setting Java Home": "linux/java_home/index.md"
+      - "Setting andoid device": "linux/android_device.md"
+      - "Commands": "linux/commands.md"
+
+    - "MySQL": 
+      - "Initial Setup": "mysql/mysql_basics.md"
+      - "JDBC Statements": "mysql/JdbcStatements.md" 
+
+  - "Hacks": 
+    - "Abc": "mysql/mysql_basics.md"
 
 
 

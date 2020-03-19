@@ -13,7 +13,26 @@
 
 ## Clone a repo to CPanel
 
-3. Go to Cpanel --> Git™ Version Control --> create clone url and enter the similar `Clone URL`
+1. Make sure you've added a `.cpanel.yml` file at the root of your project that you are uploading. The contents of this file can be something like
+
+```properties
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/ReplaceItByYourUserName/public_html/
+    - /bin/rm -Rf $DEPLOYPATH
+    - /bin/mkdir $DEPLOYPATH
+    - /bin/cp -R FileWhereSiteContentIsLocated/* $DEPLOYPATH
+```
+
+ After you upload your project, this file will be hidden (as this is a . file) but can be seen by going to your directory from cPanel home --> Advanced --> Shell
+
+```sh
+cd yourHome/Repositories
+ls -a
+```
+
+1. Go to Cpanel --> Git™ Version Control --> create clone url and enter the similar `Clone URL`
 
 ```sh
  git@github.com:<user_name>/<repository_name>.git
@@ -21,36 +40,6 @@
 
 The `Repository Path` and `Repo Name` will be autofilled. Then hit create.
 
-4. Manage repository from list --> Manage--> pull or deploy from Github --> Click on Update from Remote: works perfectly (any files edit or delete you fetch/pull from GitHub now)
+## Pull from the sources.
 
-
- git@github.com:amarjitdhillon/asdhillon.git
-
-Your identification has been saved in /home/amarylyq/.ssh/id_rsa_asdhillon.
-Your public key has been saved in /home/amarylyq/.ssh/id_rsa_asdhillon.pub. -->
-
-
-git clonea
-
-
-vim ~/.ssh/config
-
-Host cpanelaccountname
-        Hostname cpanelaccountname.web.illinois.edu
-        IdentityFile ~/.ssh/sshprivatekeyname
-        IdentitiesOnly yes
-
-
-
-Host amarylyq
-        Hostname amarylyq
-        IdentityFile ~/.ssh/id_rsa_asdhillon
-        IdentitiesOnly yes
-
-
-
-
-        amarylyq
-
-
-        git clone cpanelaccount@cpanelaccountname:/home/cpanelaccountname/path/to/repo
+1. Manage repository from list --> Manage--> pull or deploy from Github --> Click on Update from Remote: works perfectly (any files edit or delete you fetch/pull from GitHub now)
