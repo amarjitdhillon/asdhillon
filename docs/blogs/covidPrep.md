@@ -14,7 +14,7 @@ Check out the below quick tips and share them with your loved ones:
 
 1. Drink green tea 🍵, ginger-lemon, ginger-turmeric tea. If you don't have those then, heat some water and add freshly cut ginger, some garlic, honey to it and drink several times a day.
 
-1. Hame some hot soups 🍜
+1. Have some hot soups 🍜
 
 1. Gargle with hot salt water 2-3 times a day and especially before you go to bed. Your water kettle will come in handy for this.
 
