@@ -43,8 +43,11 @@ extra:
     - type: 'instagram'
       link: 'https://www.instagram.com/amarjit_dhillon/'
 
+  disqus: 'amardhillon'
+
 extra_css:
   - 'stylesheets/extra.css' # this is used to customize the material theme; I changed the footer using this
+
 
 # # Google Analytics
 # google_analytics:
@@ -79,7 +82,6 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
 
-disqus: 'amardhillon'
 
 nav:
   - "Technical":
