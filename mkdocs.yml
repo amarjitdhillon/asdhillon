@@ -99,8 +99,8 @@ nav:
       - "Initial Setup": "mysql/mysql_basics.md"
       - "JDBC Statements": "mysql/JdbcStatements.md" 
 
-  - "Hacks": 
-    - "Abc": "mysql/mysql_basics.md"
+  - "Life-Hacks": 
+    - "Covid-19 preparedness": "blogs/covidPrep.md"
 
 
 
