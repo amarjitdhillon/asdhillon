@@ -43,7 +43,7 @@ extra:
     - type: 'instagram'
       link: 'https://www.instagram.com/amarjit_dhillon/'
 
-  disqus: 'amardhillon'
+  disqus: 'amardhillon-com-1'
 
 extra_css:
   - 'stylesheets/extra.css' # this is used to customize the material theme; I changed the footer using this
