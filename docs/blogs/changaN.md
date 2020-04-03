@@ -1,7 +1,7 @@
 
 # Waqt 
 
-<center><img src="../images/Waqt.jpeg" width="100%"></center>
+<center><img src="../images/waqt.jpeg" width="100%"></center>
  
 ```bash
 Jithe na miley sakoon, us than te rehna changa ni, 
