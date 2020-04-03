@@ -1,6 +1,8 @@
 
 # Waqt 
 
+<center><img src="../images/Waqt.jpeg" width="100%"></center>
+ 
 ```bash
 Jithe na miley sakoon, us than te rehna changa ni, 
 Be-gerat sajna da, taan naam e laina changa ni 
